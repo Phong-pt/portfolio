@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phong PT | Portfolio</title>
+    <meta name="description" content="Phong PT - Cybersecurity Enthusiast, Incident Response Intern at Viettel Cyber Security. Portfolio and personal website.">
+    <meta name="keywords" content="Phong PT, cybersecurity, incident response, portfolio, BKCS">
+    <meta name="author" content="Phong PT">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Phong PT | Portfolio">
+    <meta property="og:description" content="Cybersecurity Enthusiast & Incident Response Intern">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phongpt.com">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <!-- Terminal Header Top-bar -->
+        <header class="terminal-header" id="terminal-header">
+            <div class="header-left">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+                <span class="terminal-title">~/phongpt --theme=<span id="theme-text">silver-dark</span></span>
+            </div>
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Layout Grid -->
+        <main class="main-grid">
+            
+            <!-- Left Column: Avatar & Socials -->
+            <section class="left-column">
+                
+                <!-- Profile Card -->
+                <div class="card profile-card" id="profile-card">
+                    <div class="avatar-container">
+                        <img src="assets/avatar.png" alt="Phong PT Avatar" class="avatar-img" id="avatar-img">
+                    </div>
+                    <h1 class="profile-name">Phong PT</h1>
+                    <div class="profile-tag">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <span>21 year old</span>
+                    </div>
+                    <div class="profile-tag">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Made in Vietnam</span>
+                    </div>
+                    <div class="profile-quote">
+                        Wandering the vast ocean<br>
+                        <span class="kaomoji">ʕ̡̢̡*・ェ・*ʔ̢̡̢</span>
+                    </div>
+                </div>
+
+                <!-- Socials Card -->
+                <div class="card socials-card" id="socials-card">
+                    <h2 class="card-title">Socials</h2>
+                    <div class="social-buttons">
+                        <a href="https://github.com/Phong-PT" target="_blank" class="social-btn" id="btn-github">
+                            <span>GitHub</span>
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="/cv.pdf" target="_blank" class="social-btn" id="btn-cv">
+                            <span>My CV</span>
+                            <i class="fa-solid fa-file-pdf"></i>
+                        </a>
+                        <a href="https://blog.phongpt.com" class="social-btn" id="btn-blog">
+                            <span>Blog</span>
+                            <i class="fa-solid fa-blog"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/phongpt" target="_blank" class="social-btn" id="btn-linkedin">
+                            <span>Linkedin</span>
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="https://discord.com/users/phongpt" target="_blank" class="social-btn" id="btn-discord">
+                            <span>Discord</span>
+                            <i class="fa-brands fa-discord"></i>
+                        </a>
+                        <a href="https://facebook.com/phongpt" target="_blank" class="social-btn" id="btn-facebook">
+                            <span>Facebook</span>
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Column: Sections -->
+            <section class="right-column">
+                
+                <!-- About Me Card -->
+                <div class="card about-card" id="about-card">
+                    <div class="card-header-terminal">
+                        <h2 class="section-title">About me</h2>
+                        <span class="terminal-command">$ ls -la ~/Projects</span>
+                    </div>
+                    <div class="about-content">
+                        <p>Hey, I'm <strong>Phong PT</strong></p>
+                        <p>2nd-year BSc @ <strong>SoICT, Hanoi University of Science and Technology</strong></p>
+                        <p>Majoring in <strong>Information and Communication Technology</strong></p>
+                        <p>Currently working at <strong>Viettel Cyber Security</strong> as an <strong>Incident Response Intern</strong></p>
+                        <p>Passionate about cybersecurity - blue team ops and digital forensics and eager to explore penetration testing</p>
+                        <p>Actively participating in CTFs, a proud member of <strong>BKSEC</strong> - head of Forensics Div</p>
+                    </div>
+                </div>
+
+                <!-- Experience Card -->
+                <div class="card experience-card" id="experience-card">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <!-- Experience Item 1 -->
+                        <div class="timeline-item">
+                            <div class="time-range">2/2026 - present</div>
+                            <h3 class="company-name">Viettel Cyber Security</h3>
+                            <div class="role-title">Incident Response Intern</div>
+                            <p class="experience-desc">On the way to becoming a Incident Response Specialist @ Viettel Cyber Security.</p>
+                        </div>
+                        
+                        <!-- Experience Item 2 -->
+                        <div class="timeline-item">
+                            <div class="time-range">3/2025 - present</div>
+                            <h3 class="company-name">Bach Khoa Cyber Secruity Student Club</h3>
+                            <div class="role-title">Head of Forensics Division</div>
+                            <p class="experience-desc">A proud member of BKSEC.</p>
+                        </div>
+
+                        <!-- Experience Item 3 -->
+                        <div class="timeline-item">
+                            <div class="time-range">7/2025 - 1/2026</div>
+                            <h3 class="company-name">CyStack</h3>
+                            <div class="role-title">Security Engineer Intern | Audit team</div>
+                            <p class="experience-desc">Learned about security auditing and risk assessment. As well as reversing, web developing skills</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest Projects Card -->
+                <div class="card projects-card" id="projects-card">
+                    <h2 class="section-title">Latest Projects</h2>
+                    <div class="projects-grid">
+                        <div class="project-item">
+                            <div class="project-header">
+                                <i class="fa-regular fa-folder-open"></i>
+                                <span class="project-tech">Python, Shell</span>
+                            </div>
+                            <h3 class="project-name">AutoDFIR Tool</h3>
+                            <p class="project-desc">An automated digital forensics and incident response script for Linux servers.</p>
+                        </div>
+                        <div class="project-item">
+                            <div class="project-header">
+                                <i class="fa-regular fa-folder-open"></i>
+                                <span class="project-tech">C, Assembly</span>
+                            </div>
+                            <h3 class="project-name">Custom Rootkit</h3>
+                            <p class="project-desc">A research project exploring privilege escalation and kernel hooks in Linux.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
