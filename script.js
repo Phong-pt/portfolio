@@ -1,63 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggle = document.getElementById('theme-toggle');
+    const toggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const themeText = document.getElementById('theme-text');
+    const saved = localStorage.getItem('theme') || 'dark';
 
-    // Check for saved theme preference (shared with blog via localStorage)
-    const savedTheme = localStorage.getItem('theme') || 'silver-dark';
-
-    function applyTheme(theme) {
-        if (theme === 'silver-light') {
-            body.classList.remove('dark-theme');
-            body.classList.add('light-theme');
-            themeText.textContent = 'silver-light';
-            themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-        } else {
-            body.classList.remove('light-theme');
-            body.classList.add('dark-theme');
-            themeText.textContent = 'silver-dark';
-            themeToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-        }
+    function applyTheme(t) {
+        body.classList.remove('dark-theme', 'light-theme');
+        body.classList.add(t === 'light' ? 'light-theme' : 'dark-theme');
+        toggle.innerHTML = t === 'light'
+            ? '<i class="fa-solid fa-sun"></i>'
+            : '<i class="fa-solid fa-moon"></i>';
     }
 
-    applyTheme(savedTheme);
+    applyTheme(saved);
 
-    // Toggle theme with smooth icon transition
-    themeToggle.addEventListener('click', () => {
+    toggle.addEventListener('click', () => {
         const isDark = body.classList.contains('dark-theme');
-        const newTheme = isDark ? 'silver-light' : 'silver-dark';
-
-        // Add a subtle rotation animation
-        themeToggle.style.transform = 'rotate(360deg)';
-        setTimeout(() => {
-            themeToggle.style.transform = '';
-        }, 400);
-
-        applyTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
+        const next = isDark ? 'light' : 'dark';
+        toggle.style.transform = 'rotate(360deg)';
+        setTimeout(() => toggle.style.transform = '', 400);
+        applyTheme(next);
+        localStorage.setItem('theme', next);
     });
 
-    // Intersection Observer for reveal-on-scroll animation
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
+    // Intersection Observer — reveal tiles on scroll
+    const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.style.opacity = '1';
+                e.target.style.transform = 'translateY(0)';
+                obs.unobserve(e.target);
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.1 });
 
-    // Observe all timeline items
-    document.querySelectorAll('.timeline-item').forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(10px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
+    document.querySelectorAll('.exp-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(10px)';
+        el.style.transition = 'opacity 0.5s, transform 0.5s';
+        obs.observe(el);
     });
 });

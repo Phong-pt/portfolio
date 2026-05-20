@@ -4,170 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phong PT | Portfolio</title>
-    <meta name="description" content="Phong PT - Cybersecurity Enthusiast, Incident Response Intern at Viettel Cyber Security. Portfolio and personal website.">
-    <meta name="keywords" content="Phong PT, cybersecurity, incident response, portfolio, BKCS">
-    <meta name="author" content="Phong PT">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Phong PT | Portfolio">
-    <meta property="og:description" content="Cybersecurity Enthusiast & Incident Response Intern">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://phongpt.com">
-
-    <!-- Google Fonts -->
+    <meta name="description" content="Phong PT - Cybersecurity Enthusiast, Incident Response Intern. Personal portfolio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark-theme">
-    <div class="container">
-        <!-- Terminal Header Top-bar -->
-        <header class="terminal-header" id="terminal-header">
-            <div class="header-left">
-                <span class="dot dot-red"></span>
-                <span class="dot dot-yellow"></span>
-                <span class="dot dot-green"></span>
-                <span class="terminal-title">~/phongpt --theme=<span id="theme-text">silver-dark</span></span>
+    <!-- Animated background grid -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow"></div>
+
+    <div class="shell">
+        <!-- Top Bar -->
+        <nav class="topbar" id="topbar">
+            <div class="topbar-left">
+                <span class="prompt-symbol">❯</span>
+                <span class="topbar-path" id="topbar-path">phongpt<span class="blink">_</span></span>
             </div>
-            <div class="header-right">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <div class="topbar-right">
+                <span class="status-dot"></span>
+                <span class="status-text">online</span>
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
             </div>
-        </header>
+        </nav>
 
-        <!-- Main Layout Grid -->
-        <main class="main-grid">
-            
-            <!-- Left Column: Avatar & Socials -->
-            <section class="left-column">
-                
-                <!-- Profile Card -->
-                <div class="card profile-card" id="profile-card">
-                    <div class="avatar-container">
-                        <img src="assets/avatar.png" alt="Phong PT Avatar" class="avatar-img" id="avatar-img">
-                    </div>
-                    <h1 class="profile-name">Phong PT</h1>
-                    <div class="profile-tag">
-                        <i class="fa-solid fa-cake-candles"></i>
-                        <span>21 year old</span>
-                    </div>
-                    <div class="profile-tag">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <span>Made in Vietnam</span>
-                    </div>
-                    <div class="profile-quote">
-                        Wandering the vast ocean<br>
-                        <span class="kaomoji">ʕ̡̢̡*・ェ・*ʔ̢̡̢</span>
-                    </div>
+        <!-- Bento Grid Layout -->
+        <main class="bento">
+            <!-- Hero Card — spans full width -->
+            <section class="tile tile-hero" id="tile-hero">
+                <div class="hero-avatar">
+                    <img src="assets/avatar.png" alt="Phong PT" class="avatar" id="avatar">
+                    <div class="avatar-ring"></div>
                 </div>
-
-                <!-- Socials Card -->
-                <div class="card socials-card" id="socials-card">
-                    <h2 class="card-title">Socials</h2>
-                    <div class="social-buttons">
-                        <a href="https://github.com/Phong-PT" target="_blank" class="social-btn" id="btn-github">
-                            <span>GitHub</span>
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                        <a href="/cv.pdf" target="_blank" class="social-btn" id="btn-cv">
-                            <span>My CV</span>
-                            <i class="fa-solid fa-file-pdf"></i>
-                        </a>
-                        <a href="https://blog.phongpt.com" class="social-btn" id="btn-blog">
-                            <span>Blog</span>
-                            <i class="fa-solid fa-blog"></i>
-                        </a>
-                        <a href="https://linkedin.com/in/phongpt" target="_blank" class="social-btn" id="btn-linkedin">
-                            <span>Linkedin</span>
-                            <i class="fa-brands fa-linkedin"></i>
-                        </a>
-                        <a href="https://discord.com/users/phongpt" target="_blank" class="social-btn" id="btn-discord">
-                            <span>Discord</span>
-                            <i class="fa-brands fa-discord"></i>
-                        </a>
-                        <a href="https://facebook.com/phongpt" target="_blank" class="social-btn" id="btn-facebook">
-                            <span>Facebook</span>
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
+                <div class="hero-info">
+                    <h1 class="hero-name">Phong PT</h1>
+                    <p class="hero-tagline">Incident Response Intern · Blue Team · CTF Player</p>
+                    <div class="hero-tags">
+                        <span class="chip"><i class="fa-solid fa-location-dot"></i> Vietnam</span>
+                        <span class="chip"><i class="fa-solid fa-graduation-cap"></i> SoICT — HUST</span>
+                        <span class="chip"><i class="fa-solid fa-shield-halved"></i> BKSEC</span>
                     </div>
                 </div>
             </section>
 
-            <!-- Right Column: Sections -->
-            <section class="right-column">
-                
-                <!-- About Me Card -->
-                <div class="card about-card" id="about-card">
-                    <div class="card-header-terminal">
-                        <h2 class="section-title">About me</h2>
-                        <span class="terminal-command">$ ls -la ~/Projects</span>
+            <!-- About -->
+            <section class="tile tile-about" id="tile-about">
+                <div class="tile-header">
+                    <h2><i class="fa-solid fa-terminal"></i> about.md</h2>
+                </div>
+                <div class="about-body">
+                    <p>Hey, I'm <strong>Phong PT</strong></p>
+                    <p>2nd-year BSc @ <strong>SoICT, Hanoi University of Science and Technology</strong></p>
+                    <p>Currently working at <strong>Viettel Cyber Security</strong> as an <strong>Incident Response Intern</strong></p>
+                    <p>Passionate about cybersecurity — blue team ops, digital forensics, and eager to explore penetration testing</p>
+                    <p>Actively participating in CTFs, proud member of <strong>BKSEC</strong> — head of Forensics Div</p>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="tile tile-links" id="tile-links">
+                <div class="tile-header">
+                    <h2><i class="fa-solid fa-link"></i> links</h2>
+                </div>
+                <div class="link-grid">
+                    <a href="https://github.com/Phong-PT" target="_blank" class="link-item" id="btn-github">
+                        <i class="fa-brands fa-github"></i><span>GitHub</span>
+                    </a>
+                    <a href="/cv.pdf" target="_blank" class="link-item" id="btn-cv">
+                        <i class="fa-solid fa-file-pdf"></i><span>My CV</span>
+                    </a>
+                    <a href="https://blog.phongpt.com" class="link-item" id="btn-blog">
+                        <i class="fa-solid fa-pen-nib"></i><span>Blog</span>
+                    </a>
+                    <a href="https://linkedin.com/in/phongpt" target="_blank" class="link-item" id="btn-linkedin">
+                        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+                    </a>
+                    <a href="https://discord.com/users/phongpt" target="_blank" class="link-item" id="btn-discord">
+                        <i class="fa-brands fa-discord"></i><span>Discord</span>
+                    </a>
+                    <a href="https://facebook.com/phongpt" target="_blank" class="link-item" id="btn-facebook">
+                        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Experience -->
+            <section class="tile tile-exp" id="tile-exp">
+                <div class="tile-header">
+                    <h2><i class="fa-solid fa-briefcase"></i> experience</h2>
+                </div>
+                <div class="exp-list">
+                    <div class="exp-item">
+                        <div class="exp-dot"></div>
+                        <div class="exp-content">
+                            <span class="exp-date">02/2026 — present</span>
+                            <h3>Viettel Cyber Security</h3>
+                            <p class="exp-role">Incident Response Intern</p>
+                            <p class="exp-desc">On the way to becoming a Incident Response Specialist @ Viettel Cyber Security.</p>
+                        </div>
                     </div>
-                    <div class="about-content">
-                        <p>Hey, I'm <strong>Phong PT</strong></p>
-                        <p>2nd-year BSc @ <strong>SoICT, Hanoi University of Science and Technology</strong></p>
-                        <p>Majoring in <strong>Information and Communication Technology</strong></p>
-                        <p>Currently working at <strong>Viettel Cyber Security</strong> as an <strong>Incident Response Intern</strong></p>
-                        <p>Passionate about cybersecurity - blue team ops and digital forensics and eager to explore penetration testing</p>
-                        <p>Actively participating in CTFs, a proud member of <strong>BKSEC</strong> - head of Forensics Div</p>
+                    <div class="exp-item">
+                        <div class="exp-dot"></div>
+                        <div class="exp-content">
+                            <span class="exp-date">03/2025 — present</span>
+                            <h3>Bach Khoa Cyber Security Student Club</h3>
+                            <p class="exp-role">Head of Forensics Division</p>
+                            <p class="exp-desc">A proud member of BKSEC.</p>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                        <div class="exp-dot"></div>
+                        <div class="exp-content">
+                            <span class="exp-date">07/2025 — 01/2026</span>
+                            <h3>CyStack</h3>
+                            <p class="exp-role">Security Engineer Intern · Audit Team</p>
+                            <p class="exp-desc">Learned about security auditing and risk assessment. As well as reversing, web developing skills.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Experience Card -->
-                <div class="card experience-card" id="experience-card">
-                    <h2 class="section-title">Experience</h2>
-                    <div class="timeline">
-                        <!-- Experience Item 1 -->
-                        <div class="timeline-item">
-                            <div class="time-range">2/2026 - present</div>
-                            <h3 class="company-name">Viettel Cyber Security</h3>
-                            <div class="role-title">Incident Response Intern</div>
-                            <p class="experience-desc">On the way to becoming a Incident Response Specialist @ Viettel Cyber Security.</p>
+            <!-- Projects -->
+            <section class="tile tile-projects" id="tile-projects">
+                <div class="tile-header">
+                    <h2><i class="fa-solid fa-code-branch"></i> projects</h2>
+                </div>
+                <div class="project-cards">
+                    <div class="proj-card">
+                        <div class="proj-top">
+                            <i class="fa-regular fa-folder-open"></i>
+                            <span class="proj-lang">Python · Shell</span>
                         </div>
-                        
-                        <!-- Experience Item 2 -->
-                        <div class="timeline-item">
-                            <div class="time-range">3/2025 - present</div>
-                            <h3 class="company-name">Bach Khoa Cyber Secruity Student Club</h3>
-                            <div class="role-title">Head of Forensics Division</div>
-                            <p class="experience-desc">A proud member of BKSEC.</p>
+                        <h3>AutoDFIR Tool</h3>
+                        <p>Automated digital forensics & incident response script for Linux servers.</p>
+                    </div>
+                    <div class="proj-card">
+                        <div class="proj-top">
+                            <i class="fa-regular fa-folder-open"></i>
+                            <span class="proj-lang">C · Assembly</span>
                         </div>
-
-                        <!-- Experience Item 3 -->
-                        <div class="timeline-item">
-                            <div class="time-range">7/2025 - 1/2026</div>
-                            <h3 class="company-name">CyStack</h3>
-                            <div class="role-title">Security Engineer Intern | Audit team</div>
-                            <p class="experience-desc">Learned about security auditing and risk assessment. As well as reversing, web developing skills</p>
-                        </div>
+                        <h3>Custom Rootkit</h3>
+                        <p>Research project exploring privilege escalation and kernel hooks in Linux.</p>
                     </div>
                 </div>
+            </section>
 
-                <!-- Latest Projects Card -->
-                <div class="card projects-card" id="projects-card">
-                    <h2 class="section-title">Latest Projects</h2>
-                    <div class="projects-grid">
-                        <div class="project-item">
-                            <div class="project-header">
-                                <i class="fa-regular fa-folder-open"></i>
-                                <span class="project-tech">Python, Shell</span>
-                            </div>
-                            <h3 class="project-name">AutoDFIR Tool</h3>
-                            <p class="project-desc">An automated digital forensics and incident response script for Linux servers.</p>
-                        </div>
-                        <div class="project-item">
-                            <div class="project-header">
-                                <i class="fa-regular fa-folder-open"></i>
-                                <span class="project-tech">C, Assembly</span>
-                            </div>
-                            <h3 class="project-name">Custom Rootkit</h3>
-                            <p class="project-desc">A research project exploring privilege escalation and kernel hooks in Linux.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- Footer quote -->
+            <section class="tile tile-quote">
+                <p>Wandering the vast ocean &nbsp;ʕ̡̢̡*・ェ・*ʔ̢̡̢</p>
             </section>
         </main>
     </div>
