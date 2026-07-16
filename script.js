@@ -4,7 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeColor = document.querySelector('meta[name="theme-color"]');
     const year = document.getElementById('year');
 
+    const getCookie = (name) => {
+        const prefix = `${name}=`;
+        return document.cookie.split(';').map((item) => item.trim()).reduce((value, item) => {
+            if (value || !item.startsWith(prefix)) return value;
+            return decodeURIComponent(item.slice(prefix.length));
+        }, '');
+    };
+
     const getSavedTheme = () => {
+        const sharedTheme = getCookie('phongpt-theme');
+        if (sharedTheme === 'light' || sharedTheme === 'dark') return sharedTheme;
+
         try {
             return localStorage.getItem('theme');
         } catch {
@@ -18,6 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch {
             // The page remains usable when storage is unavailable.
         }
+
+        let cookie = `phongpt-theme=${encodeURIComponent(theme)}; path=/; max-age=31536000; SameSite=Lax`;
+        const host = window.location.hostname;
+        if (host === 'phongpt.com' || host.endsWith('.phongpt.com')) {
+            cookie += '; domain=.phongpt.com';
+        }
+        if (window.location.protocol === 'https:') {
+            cookie += '; Secure';
+        }
+        document.cookie = cookie;
     };
 
     const applyTheme = (theme) => {
