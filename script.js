@@ -1,42 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toggle = document.getElementById('theme-toggle');
     const body = document.body;
-    const saved = localStorage.getItem('theme') || 'dark';
+    const toggle = document.getElementById('theme-toggle');
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const year = document.getElementById('year');
 
-    function applyTheme(t) {
+    const getSavedTheme = () => {
+        try {
+            return localStorage.getItem('theme');
+        } catch {
+            return null;
+        }
+    };
+
+    const saveTheme = (theme) => {
+        try {
+            localStorage.setItem('theme', theme);
+        } catch {
+            // The page remains usable when storage is unavailable.
+        }
+    };
+
+    const applyTheme = (theme) => {
+        const isLight = theme === 'light';
         body.classList.remove('dark-theme', 'light-theme');
-        body.classList.add(t === 'light' ? 'light-theme' : 'dark-theme');
-        toggle.innerHTML = t === 'light'
-            ? '<i class="fa-solid fa-sun"></i>'
-            : '<i class="fa-solid fa-moon"></i>';
-    }
+        body.classList.add(isLight ? 'light-theme' : 'dark-theme');
 
-    applyTheme(saved);
+        const nextTheme = isLight ? 'dark' : 'light';
+        toggle.innerHTML = isLight
+            ? '<i class="fa-solid fa-moon" aria-hidden="true"></i>'
+            : '<i class="fa-solid fa-sun" aria-hidden="true"></i>';
+        toggle.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+        toggle.setAttribute('title', `Switch to ${nextTheme} theme`);
+        themeColor?.setAttribute('content', isLight ? '#f7faff' : '#0a0a0b');
+    };
+
+    const savedTheme = getSavedTheme();
+    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
 
     toggle.addEventListener('click', () => {
-        const isDark = body.classList.contains('dark-theme');
-        const next = isDark ? 'light' : 'dark';
-        toggle.style.transform = 'rotate(360deg)';
-        setTimeout(() => toggle.style.transform = '', 400);
-        applyTheme(next);
-        localStorage.setItem('theme', next);
+        const nextTheme = body.classList.contains('light-theme') ? 'dark' : 'light';
+        applyTheme(nextTheme);
+        saveTheme(nextTheme);
     });
 
-    // Intersection Observer — reveal tiles on scroll
-    const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-            if (e.isIntersecting) {
-                e.target.style.opacity = '1';
-                e.target.style.transform = 'translateY(0)';
-                obs.unobserve(e.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.exp-item').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(10px)';
-        el.style.transition = 'opacity 0.5s, transform 0.5s';
-        obs.observe(el);
-    });
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
 });

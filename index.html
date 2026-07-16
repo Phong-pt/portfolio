@@ -1,174 +1,137 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7faff">
     <title>Phong PT | Portfolio</title>
+    <meta name="description" content="Pham The Phong — Web3 security intern, CTF player, and cybersecurity student.">
     <link rel="icon" type="image/png" href="assets/avatar.png">
-    <meta name="description" content="Pham The Phong - Personal portfolio.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:wght@400;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="dark-theme">
-    <!-- Animated background grid -->
-    <div class="bg-grid"></div>
-    <div class="bg-glow"></div>
+<body class="light-theme">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow" aria-hidden="true"></div>
 
     <div class="shell">
-        <!-- Top Bar -->
-        <nav class="topbar" id="topbar">
-            <div class="topbar-left">
-                <span class="prompt-symbol">❯</span>
-                <span class="topbar-path" id="topbar-path">phongpt<span class="blink">_</span></span>
-            </div>
+        <nav class="topbar" aria-label="Primary navigation">
+            <a class="brand" href="#top" aria-label="Phong PT home">
+                <span class="brand-mark" aria-hidden="true">PP</span>
+                <span class="brand-copy">
+                    <span class="brand-label">Portfolio</span>
+                    <span class="topbar-path">phongpt.com</span>
+                </span>
+            </a>
+
             <div class="topbar-right">
-                <span class="status-dot"></span>
-                <span class="status-text">online</span>
-                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
+                <span class="availability"><span class="status-dot" aria-hidden="true"></span> Available for a chat</span>
+                <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+                    <i class="fa-solid fa-moon" aria-hidden="true"></i>
                 </button>
             </div>
         </nav>
 
-        <!-- Bento Grid Layout -->
-        <main class="bento">
-            <!-- Hero Card — spans full width -->
-            <section class="tile tile-hero" id="tile-hero">
-                <div class="hero-avatar">
-                    <img src="assets/avatar.png" alt="Phong PT" class="avatar" id="avatar">
-                    <div class="avatar-ring"></div>
-                </div>
-                <div class="hero-info">
-                    <h1 class="hero-name">Pham The Phong</h1>
-                    <p class="hero-tagline">CTF Player</p>
-                    <div class="hero-tags">
-                        <span class="chip"><i class="fa-solid fa-location-dot"></i> Vietnam</span>
-                        <span class="chip"><i class="fa-solid fa-graduation-cap"></i> SoICT — HUST</span>
-                        <span class="chip"><i class="fa-solid fa-cake-candles"></i> 21 Years Old</span>
+        <main class="bento" id="top">
+            <section class="tile tile-hero" aria-labelledby="hero-title">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> Security, systems &amp; curiosity</p>
+                    <h1 class="hero-name" id="hero-title">Pham The Phong</h1>
+                    <p class="hero-tagline">Web3 Security Intern and CTF player building a sharper eye for how systems break — and how to protect them.</p>
+
+                    <div class="hero-tags" aria-label="Profile details">
+                        <span class="chip"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Vietnam</span>
+                        <span class="chip"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> SoICT · HUST</span>
+                        <span class="chip"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Web3 security</span>
                     </div>
+
+                    <div class="hero-actions">
+                        <a href="https://blog.phongpt.com" target="_blank" rel="noreferrer" class="button button-primary">
+                            <i class="fa-solid fa-pen-nib" aria-hidden="true"></i>
+                            <span>Read my blog</span>
+                            <i class="fa-solid fa-arrow-up-right-from-square button-arrow" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://github.com/Phong-PT" target="_blank" rel="noreferrer" class="button button-secondary">
+                            <i class="fa-brands fa-github" aria-hidden="true"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-avatar" aria-hidden="true">
+                    <div class="avatar-frame">
+                        <img src="assets/avatar.png" alt="">
+                    </div>
+                    <span class="avatar-caption">phong.pt</span>
                 </div>
             </section>
 
-            <!-- About -->
-            <section class="tile tile-about" id="tile-about">
+            <section class="tile tile-about" aria-labelledby="about-title">
                 <div class="tile-header">
-                    <h2><i class="fa-solid fa-terminal"></i> about.md</h2>
+                    <div>
+                        <p class="section-kicker">01 / About</p>
+                        <h2 id="about-title">A little about me</h2>
+                    </div>
+                    <i class="fa-solid fa-terminal" aria-hidden="true"></i>
                 </div>
+
                 <div class="about-body">
-                    <p>Hey, I'm <strong>Pham The Phong</strong></p>
-                    <p>3nd-year student @ <strong>SoICT, Hanoi University of Science and Technology</strong></p>
-                    <p>Currently working at <strong>ASTAR</strong> as an <strong>Web3 Security Intern</strong></p>
-                    <p>Passionate about cybersecurity — red team, smart contract security</p>
-                    <p>Actively participating in CTFs </p>
+                    <p>I'm a third-year student at <strong>SoICT, Hanoi University of Science and Technology.</strong></p>
+                    <p>Currently, I work at <strong>ASTAR</strong> as a <strong>Web3 Security Intern.</strong></p>
+                    <p>I'm most at home around red-team thinking, smart-contract security, and hands-on CTF challenges.</p>
                 </div>
             </section>
 
-            <!-- Quick Links -->
-            <section class="tile tile-links" id="tile-links">
+            <section class="tile tile-links" aria-labelledby="links-title">
                 <div class="tile-header">
-                    <h2><i class="fa-solid fa-link"></i> links</h2>
+                    <div>
+                        <p class="section-kicker">02 / Connect</p>
+                        <h2 id="links-title">Find me elsewhere</h2>
+                    </div>
+                    <i class="fa-solid fa-arrow-up-right-dots" aria-hidden="true"></i>
                 </div>
+
+                <a href="https://blog.phongpt.com" target="_blank" rel="noreferrer" class="featured-link" id="btn-blog">
+                    <span class="featured-link-icon"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i></span>
+                    <span class="featured-link-copy">
+                        <span class="featured-link-label">Blog</span>
+                        <span>Notes, write-ups &amp; things I am learning</span>
+                    </span>
+                    <i class="fa-solid fa-arrow-right featured-link-arrow" aria-hidden="true"></i>
+                </a>
+
                 <div class="link-grid">
-                    <a href="https://github.com/Phong-PT" target="_blank" class="link-item" id="btn-github">
-                        <i class="fa-brands fa-github"></i><span>GitHub</span>
+                    <a href="https://github.com/Phong-PT" target="_blank" rel="noreferrer" class="link-item" id="btn-github">
+                        <i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span>
                     </a>
-                    <a href="MyCV1.pdf" target="_blank" class="link-item" id="btn-cv">
-                        <i class="fa-solid fa-file-pdf"></i><span>My CV</span>
+                    <a href="MyCV1.pdf" target="_blank" rel="noreferrer" class="link-item" id="btn-cv">
+                        <i class="fa-solid fa-file-pdf" aria-hidden="true"></i><span>Curriculum vitae</span>
                     </a>
-                    <a href="https://blog.phongpt.com" class="link-item" id="btn-blog">
-                        <i class="fa-solid fa-pen-nib"></i><span>Blog</span>
+                    <a href="https://www.linkedin.com/in/phong-ph%E1%BA%A1m-68303a284/" target="_blank" rel="noreferrer" class="link-item" id="btn-linkedin">
+                        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/phong-ph%E1%BA%A1m-68303a284/" target="_blank" class="link-item" id="btn-linkedin">
-                        <i class="fa-brands fa-linkedin"></i><span>LinkedIn</span>
+                    <a href="https://discord.com/users/583223753572483084" target="_blank" rel="noreferrer" class="link-item" id="btn-discord">
+                        <i class="fa-brands fa-discord" aria-hidden="true"></i><span>Discord</span>
                     </a>
-                    <a href="https://discord.com/users/583223753572483084" target="_blank" class="link-item" id="btn-discord">
-                        <i class="fa-brands fa-discord"></i><span>Discord</span>
-                    </a>
-                    <a href="https://www.facebook.com/Fong05/?locale=vi_VN" target="_blank" class="link-item" id="btn-facebook">
-                        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+                    <a href="https://www.facebook.com/Fong05/?locale=vi_VN" target="_blank" rel="noreferrer" class="link-item" id="btn-facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i><span>Facebook</span>
                     </a>
                 </div>
             </section>
 
-            <!-- Experience 
-            <section class="tile tile-exp" id="tile-exp">
-                <div class="tile-header">
-                    <h2><i class="fa-solid fa-briefcase"></i> experience</h2>
-                </div>
-                <div class="exp-list">
-                    <div class="exp-item">
-                        <div class="exp-dot"></div>
-                        <div class="exp-content">
-                            <span class="exp-date">02/2026 — present</span>
-                            <h3>Viettel Cyber Security</h3>
-                            <p class="exp-role">Incident Response Intern</p>
-                            <p class="exp-desc">On the way to becoming a Incident Response Specialist @ Viettel Cyber
-                                Security.</p>
-                        </div>
-                    </div>
-                    <div class="exp-item">
-                        <div class="exp-dot"></div>
-                        <div class="exp-content">
-                            <span class="exp-date">03/2025 — present</span>
-                            <h3>Bach Khoa Cyber Security Student Club</h3>
-                            <p class="exp-role">Head of Forensics Division</p>
-                            <p class="exp-desc">A proud member of BKSEC.</p>
-                        </div>
-                    </div>
-                    <div class="exp-item">
-                        <div class="exp-dot"></div>
-                        <div class="exp-content">
-                            <span class="exp-date">07/2025 — 01/2026</span>
-                            <h3>CyStack</h3>
-                            <p class="exp-role">Security Engineer Intern · Audit Team</p>
-                            <p class="exp-desc">Learned about security auditing and risk assessment. As well as
-                                reversing, web developing skills.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            -->
-
-            <!-- Projects 
-            <section class="tile tile-projects" id="tile-projects">
-                <div class="tile-header">
-                    <h2><i class="fa-solid fa-code-branch"></i> projects</h2>
-                </div>
-                <div class="project-cards">
-                    <div class="proj-card">
-                        <div class="proj-top">
-                            <i class="fa-regular fa-folder-open"></i>
-                            <span class="proj-lang">Python · Shell</span>
-                        </div>
-                        <h3>AutoDFIR Tool</h3>
-                        <p>Automated digital forensics & incident response script for Linux servers.</p>
-                    </div>
-                    <div class="proj-card">
-                        <div class="proj-top">
-                            <i class="fa-regular fa-folder-open"></i>
-                            <span class="proj-lang">C · Assembly</span>
-                        </div>
-                        <h3>Custom Rootkit</h3>
-                        <p>Research project exploring privilege escalation and kernel hooks in Linux.</p>
-                    </div>
-                </div>
-            </section>
-            -->
-
-            <!-- Footer quote -->
-            <section class="tile tile-quote">
-                <p>Try to lighten this heavy mind &nbsp;(ᵕ—ᴗ—)” </p>
-            </section>
+            <footer class="tile tile-quote">
+                <p>"Try to lighten this heavy mind."</p>
+                <span>© <span id="year">2026</span> Phong PT</span>
+            </footer>
         </main>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
